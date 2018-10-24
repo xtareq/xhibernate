@@ -11,15 +11,9 @@ public class Main {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("org.hibernate.tutorial.jpa");
 
         //Instancite client
-
-        Client client = new Client();
-        client.setId(3);
-        client.setName("Hossain");
-
-        //new Bank
-
         Bank bank = new Bank();
-        bank.setName("HSBC");
+        bank.setName("AB");
+
 
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -28,10 +22,12 @@ public class Main {
 
         entityManager.getTransaction().begin();
 
-        //persist bank and client
+        //Retrive object by primary key
+         entityManager.persist(bank);
 
-        entityManager.persist(bank);
-        entityManager.persist(client);
+        Bank bnk = entityManager.find(Bank.class,bank.getId());
+
+        System.out.println("Got "+ bank.getName() +" "+ bnk.getId());
 
         //commiting transaction
 
