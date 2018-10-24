@@ -13,13 +13,13 @@ public class Main {
         //Instancite client
 
         Client client = new Client();
-        client.setId(2);
-        client.setName("Tareq");
+        client.setId(3);
+        client.setName("Hossain");
 
         //new Bank
 
         Bank bank = new Bank();
-        bank.setName("DBBL");
+        bank.setName("HSBC");
 
 
         EntityManager entityManager = entityManagerFactory.createEntityManager();

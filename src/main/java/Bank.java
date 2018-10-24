@@ -1,3 +1,5 @@
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -6,6 +8,7 @@ public class Bank {
     @Id
     @Column(name="id")
     @GeneratedValue(generator="incrementor")
+    @GenericGenerator(name = "incrementor", strategy = "increment")
     private Integer id;
 
     @Column(name = "name")
